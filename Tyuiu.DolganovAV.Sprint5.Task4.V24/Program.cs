@@ -1,4 +1,4 @@
-﻿using Tyuiu.DolganovAV.Sprint5.Task3.V29.Lib;
+﻿using Tyuiu.DolganovAV.Sprint5.Task4.V24.Lib;
 internal class Program
 {
     private static void Main(string[] args)
@@ -7,9 +7,9 @@ internal class Program
         Console.Title = "Спринт #5 | Выполнил: Долганов А. В. | ПИНб-25-1";
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* Спринт #5                                                               *");
-        Console.WriteLine("* Тема: Класс File                                                        *");
-        Console.WriteLine("* Задание #3                                                              *");
-        Console.WriteLine("* Вариант #29                                                             *");
+        Console.WriteLine("* Тема: Чтение данных из текстового файла                                 *");
+        Console.WriteLine("* Задание #4                                                              *");
+        Console.WriteLine("* Вариант #24                                                             *");
         Console.WriteLine("* Выполнил: Долганов Александр Витальевич | ПИНб-25-1                     *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                *");
@@ -20,16 +20,15 @@ internal class Program
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
         Console.WriteLine("***************************************************************************");
 
-        int x = 3;
-        Console.WriteLine($"x = {x}");
+        string path = $@"C:\DataSprint5\InPutDataFileTask4V24.txt";
+        Console.WriteLine("Данные находятся в файле: " + path);
 
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
 
-        string path = ds.SaveToFileTextData(x);
-        Console.WriteLine($"Файл: {path}");
-        Console.WriteLine("Создан");
+        var res = ds.LoadFromDataFile(path);
+        Console.WriteLine(res);
         Console.ReadKey();
     }
 }
