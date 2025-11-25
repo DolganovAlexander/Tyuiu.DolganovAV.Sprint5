@@ -9,7 +9,8 @@ namespace Tyuiu.DolganovAV.Sprint5.Task7.V5.Lib
             string output = Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V5.txt");
             string content = File.ReadAllText(path);
             string res = Regex.Replace(content, "[a-zA-z]", "");
-            res = Regex.Replace(res, @"\s+", " ");
+            res = Regex.Replace(res, @"\s+([.,!?;:])", "$1");
+            res = Regex.Replace(res, @"\b \b", "");
             File.WriteAllText(output, res);
             return output;
         }
